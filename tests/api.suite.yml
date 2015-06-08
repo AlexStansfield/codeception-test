@@ -1,0 +1,13 @@
+class_name: ApiTester
+modules:
+    enabled: [Symfony2, Doctrine2, REST, ApiHelper]
+    config:
+        Symfony2:
+            app_path: 'app'
+            environment: 'dev'
+        Doctrine2:
+            depends: Symfony2
+            connection_callback: [AFakeValueHere]
+            cleanup: true
+        REST:
+            url: http://test/
